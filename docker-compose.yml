@@ -1,0 +1,13 @@
+version: '3.8'
+
+services:
+  pdf-service:
+    build: .
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./uploads:/app/uploads
+      - ./data:/app/data
+    environment:
+      - DEBUG=False
+    container_name: pdf-extraction-service
